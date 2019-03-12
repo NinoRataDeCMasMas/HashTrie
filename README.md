@@ -39,19 +39,12 @@ Se instancian los objetos correspondientes ```TxtReader``` y ```HashTrie```. La 
     TxtReader reader;
     auto* HT = new HashTrie;
     auto* Hc = HashCollection::create();
-<<<<<<< HEAD
-=======
-
->>>>>>> 0b7030a5db0f1e7ac4992ba3d79d37c3e4c21dec
 ```
 
 También se declara una variable ```path``` con la ruta del archivo que contendrá la simulación de datos corruptos durante una transmisión. La lista de datos corruptos usada en este ejemplo es la siguiente:
 
 ```txt
-<<<<<<< HEAD
-=======
 
->>>>>>> 0b7030a5db0f1e7ac4992ba3d79d37c3e4c21dec
 _BTN1
 uBXY1
 %BTN1
@@ -68,10 +61,6 @@ asqwq
 %@TN&
 %@^&1
 457py
-<<<<<<< HEAD
-=======
-
->>>>>>> 0b7030a5db0f1e7ac4992ba3d79d37c3e4c21dec
 ```
 Enseguida simulamos la trama transmitida hacia nuestro dispositivo, en este caso 
 
@@ -129,13 +118,8 @@ Para cada dato transmitido, el ```HashTrie``` evaulará la calidad de la transmi
 
 Al ejecutar este ejemplo con la lista mostrada, se observan los siguientes resultados:
 
-<<<<<<< HEAD
-
-```txt
-=======
 ```txt
 
->>>>>>> 0b7030a5db0f1e7ac4992ba3d79d37c3e4c21dec
 _BTN1 :BTN1 (1)
 uBXY1 :BTN1 (0.6)
 %BTN1 :BTN1 (1)
@@ -153,7 +137,3 @@ asqwq :sqwq ✗ (0.2)
 %@^&1 :@^&1 ✗ (0.4)
 457py :57py ✗ (0.2)
 ```
-<<<<<<< HEAD
-
-=======
->>>>>>> 0b7030a5db0f1e7ac4992ba3d79d37c3e4c21dec
