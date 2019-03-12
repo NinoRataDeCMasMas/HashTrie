@@ -44,7 +44,6 @@ Se instancian los objetos correspondientes ```TxtReader``` y ```HashTrie```. La 
 También se declara una variable ```path``` con la ruta del archivo que contendrá la simulación de datos corruptos durante una transmisión. La lista de datos corruptos usada en este ejemplo es la siguiente:
 
 ```txt
-
 _BTN1
 uBXY1
 %BTN1
@@ -81,8 +80,8 @@ Para cada dato transmitido, el ```HashTrie``` evaulará la calidad de la transmi
 
     for(const auto& it: *reader(path))
     {
-        // se muestra la trama real transmitida hacia nuestro dispositivo, la cual puede ser afectada o corrupta
-        // por diversos factores como mala conexion, interferencia electromagnetica, etc.
+        // se muestra la trama real transmitida hacia nuestro dispositivo, la cual puede ser afectada
+        //  o corrupta por diversos factores como mala conexion, interferencia electromagnetica, etc.
         cout << it << " :";
 
         // se recupera la trama transmitida en el buffer
@@ -102,13 +101,13 @@ Para cada dato transmitido, el ```HashTrie``` evaulará la calidad de la transmi
                 // Función que se ejecuta al validar los datos recibidos
                 ,[ ](char* D, size_t s, double z) -> void
                 {
-                    std::cout << D << " (" << z << ")" << std::endl;
+                    cout << D << " (" << z << ")" << endl;
                 }
 
                 // Función que se ejecuta al no poder corregir los datos
                 ,[ ](char* D, size_t s, double z) -> void
                 {
-                    std::cout << D << " ✗ (" << z << ")" << std::endl;
+                    cout << D << " ✗ (" << z << ")" << endl;
                 }
                 );
     }
@@ -119,7 +118,6 @@ Para cada dato transmitido, el ```HashTrie``` evaulará la calidad de la transmi
 Al ejecutar este ejemplo con la lista mostrada, se observan los siguientes resultados:
 
 ```txt
-
 _BTN1 :BTN1 (1)
 uBXY1 :BTN1 (0.6)
 %BTN1 :BTN1 (1)
